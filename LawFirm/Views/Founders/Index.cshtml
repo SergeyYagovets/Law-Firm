@@ -1,0 +1,89 @@
+﻿@model IEnumerable<LawFirm.Models.Founder>
+
+@{
+    ViewData["Title"] = "Faunder";
+}
+
+<h1>Faunder</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.INN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patronymic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerData)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerUpdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.INN)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.INN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patronymic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerUpdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.INN)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FounderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FounderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FounderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
